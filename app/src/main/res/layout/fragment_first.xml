@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".fragment.FirstFragment">
+
+    <Button
+        android:id="@+id/btnOpenNewActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Open New Activity" />
+
+    <Button
+        android:id="@+id/btnOpenNewFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Open New Fragment" />
+
+
+    <Button
+        android:id="@+id/btnParseData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Parse HTML" />
+
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:visibility="gone" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvData"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp" />
+
+
+</LinearLayout>
