@@ -1,0 +1,57 @@
+package com.hvasoftware.parsehtmlusejsoup;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import java.util.List;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+public abstract class BaseRecyclerViewAdapter extends RecyclerView.Adapter<BaseRecyclerViewAdapter.MyViewHolder> {
+
+    private Context mContext;
+
+    public BaseRecyclerViewAdapter(Context context) {
+        this.mContext = context;
+    }
+
+    @NonNull
+    @Override
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(getLayoutID(), viewGroup, false);
+        return new MyViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull MyViewHolder viewHolder, int position) {
+        onBindViewHold(position);
+    }
+
+    public abstract View getView(View view);
+
+    public abstract List<?> getDataList();
+
+    public abstract int getLayoutID();
+
+
+    @Override
+    public int getItemCount() {
+        return getDataList().size();
+    }
+
+
+    public abstract void onBindViewHold(int position);
+
+    class MyViewHolder extends RecyclerView.ViewHolder {
+        public MyViewHolder(@NonNull View itemView) {
+            super(itemView);
+            getView(itemView);
+        }
+
+    }
+
+
+}
